@@ -65,13 +65,16 @@ body{
 
 /* Newspaper / letter style */
 .paper{
-  width:min(980px, 96vw);
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
   background: linear-gradient(180deg, var(--paper), var(--paper2));
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:18px;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 18px;
   box-shadow: 0 20px 70px rgba(0,0,0,.12);
-  overflow:hidden;
+  overflow: hidden;
 }
+
 
 .paper__header{
   display:grid;
