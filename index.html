@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para mi princesa 💌</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+
+    <!-- ESCENA 1 -->
+    <section class="scene scene-1" id="scene1" aria-label="Escena 1">
+      <div class="card">
+        <img class="hero" src="assets/escena1.png" alt="Te ha llegado una carta">
+        <button class="btn" id="openLetterBtn">Abrir carta 💖</button>
+        <p class="hint">Tip: pon pantalla completa para que se vea más bonito ✨</p>
+      </div>
+    </section>
+
+    <!-- ESCENA 2 -->
+    <section class="scene scene-2 hidden" id="scene2" aria-label="Escena 2">
+      <article class="paper">
+        <header class="paper__header">
+          <div class="paper__date">
+            <span id="today"></span>
+          </div>
+
+          <div class="paper__titlewrap">
+            <div class="paper__edition">SPECIAL EDITION</div>
+            <h1 class="paper__name">The Cupid Post</h1>
+          </div>
+
+          <div class="paper__date paper__date--right">
+            <span>💘</span>
+          </div>
+        </header>
+
+        <div class="paper__headline">
+          <h2>WILL YOU BE MY <span class="valentine">Valentine?</span>?</h2>
+        </div>
+
+        <div class="paper__content">
+          <div class="paper__text">
+            <p class="Mi">Mi <span id="herName">Princesa</span>,</p>
+
+            
+            <p>
+              Bueno segundo próximo San Valentín juntos y no me imagino pasándolo con alguien mas que no seas tu,
+              hoy quiero darte a conocer que no necesita ser un dia especial para demostrarte mi amor si siempre
+              trato de enseñártelo me he equivocado muchas veces pero siempre veo lo malo y quiero corregirlo
+              este año quiero ser mejor y estoy empezando a trabajar en técnicas para poder verme mejor y 
+              seguir a tu lado haciéndote feliz, hoy te escribo mi princesa, mi niña, mi novia, mi luz y 
+              lo mejor de todo mi luna porque si que curioso que lo que mas me acompaña en mis días y me levanta 
+              en los días oscuros eres tu como una luna haciéndole un poco de referencia a tu nombre, 
+              te amo demasiado y quiero que sigas siendo mi luna acompañándome siempre y yo ser tu mundo donde 
+              lo voy ajustar y corregirlo para hacerlo un lugar mejor para ti y seas feliz.
+            </p>
+              <strong>¿Quieres ser mi San Valentín?</strong>
+            </p>
+
+            <p class="signature">
+              Con todo mi amor,<br>
+              <span id="myName">Angel</span> ✍️
+            </p>
+
+            <div class="actions">
+              <button class="btn btn-secondary" id="backBtn">Volver</button>
+              <button class="btn" id="confettiBtn">¡Sí! 🎉</button>
+            </div>
+          </div>
+
+          <figure class="paper__photo">
+            <!-- Si no tienes foto, deja el placeholder -->
+            <img src="assets/foto.jpg" alt="Foto juntos" onerror="this.classList.add('placeholder'); this.alt='(Agrega assets/foto.jpg)';">
+            <figcaption>Happy Valentine’s Day</figcaption>
+          </figure>
+        </div>
+
+        <footer class="paper__footer">
+          <span>💌 Hecho con amor</span>
+        </footer>
+      </article>
+    </section>
+
+    <canvas id="confettiCanvas" class="confetti" aria-hidden="true"></canvas>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

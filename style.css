@@ -1,0 +1,208 @@
+:root{
+  --bg1:#ffeef3;
+  --pink:#ff6b8b;
+  --pink2:#ff88a1;
+  --ink:#111;
+  --paper:#f7f4ee;
+  --paper2:#efe9dd;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at top, #fff, var(--bg1));
+  color:var(--ink);
+}
+
+.app{min-height:100vh; display:grid; place-items:center; padding:18px;}
+
+.scene{width:100%; display:grid; place-items:center;}
+.hidden{display:none;}
+
+.card{
+  width:min(420px, 92vw);
+  background:#ffffffcc;
+  border:1px solid #ffffff;
+  border-radius:24px;
+  padding:18px;
+  box-shadow: 0 18px 60px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.hero{
+  width:100%;
+  border-radius:18px;
+  display:block;
+}
+
+.btn{
+  margin-top:14px;
+  border:none;
+  background: linear-gradient(135deg, var(--pink), var(--pink2));
+  color:white;
+  padding:12px 16px;
+  border-radius:14px;
+  font-weight:700;
+  cursor:pointer;
+  width:100%;
+  box-shadow: 0 10px 25px rgba(255,107,139,.25);
+  transform: translateY(0);
+  transition: transform .15s ease, filter .15s ease;
+}
+.btn:hover{transform: translateY(-2px); filter:saturate(1.05);}
+.btn:active{transform: translateY(0);}
+
+.btn-secondary{
+  background: #fff;
+  color:#222;
+  border:1px solid #ddd;
+  box-shadow:none;
+}
+
+.hint{margin:10px 0 0; opacity:.7; font-size:.9rem}
+
+/* Newspaper / letter style */
+.paper{
+  width:min(980px, 96vw);
+  background: linear-gradient(180deg, var(--paper), var(--paper2));
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:18px;
+  box-shadow: 0 20px 70px rgba(0,0,0,.12);
+  overflow:hidden;
+}
+
+.paper__header{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap:12px;
+  align-items:center;
+  padding:14px 18px;
+  border-bottom:1px solid rgba(0,0,0,.08);
+  background:#ffffff55;
+}
+
+.paper__date{font-size:.85rem; opacity:.8}
+.paper__date--right{justify-self:end}
+
+.paper__edition{
+  text-align:center;
+  font-size:.75rem;
+  letter-spacing:.12em;
+  opacity:.75;
+}
+
+.paper__name{
+  margin:0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight:800;
+  text-align:center;
+  letter-spacing:.02em;
+}
+
+.paper__headline{
+  padding: 10px 18px 0;
+  text-align:center;
+}
+
+.paper__headline h2{
+  margin: 10px 0 6px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(28px, 4vw, 54px);
+  letter-spacing:.04em;
+}
+
+.valentine{
+  font-style: italic;
+  letter-spacing:0;
+}
+
+.paper__content{
+  display:grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap:18px;
+  padding: 16px 18px 18px;
+}
+
+.paper__text{
+  background:#ffffff66;
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:14px;
+  padding:14px 14px 10px;
+}
+
+.paper__text p{
+  margin:10px 0;
+  line-height:1.6;
+  font-size:1.02rem;
+}
+
+.dear{
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size:1.08rem;
+  margin-top:0;
+}
+
+.signature{
+  margin-top:16px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size:1.05rem;
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+  margin-top:12px;
+}
+.actions .btn{width:auto; flex:1; margin-top:0}
+
+.paper__photo{
+  margin:0;
+  background:#ffffff66;
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:14px;
+  padding:12px;
+  display:grid;
+  gap:10px;
+  align-content:start;
+}
+
+.paper__photo img{
+  width:100%;
+  height: auto;
+  border-radius:12px;
+  display:block;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.paper__photo img.placeholder{
+  min-height:260px;
+  background:
+    repeating-linear-gradient(45deg, rgba(0,0,0,.05), rgba(0,0,0,.05) 10px, rgba(0,0,0,.02) 10px, rgba(0,0,0,.02) 20px);
+}
+
+.paper__photo figcaption{
+  text-align:center;
+  font-family: Georgia, 'Times New Roman', serif;
+  opacity:.85;
+}
+
+.paper__footer{
+  padding:10px 18px;
+  border-top:1px solid rgba(0,0,0,.08);
+  text-align:center;
+  background:#ffffff55;
+}
+
+.confetti{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 820px){
+  .paper__content{grid-template-columns: 1fr;}
+  .actions{flex-direction:column;}
+}
