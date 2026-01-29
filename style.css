@@ -265,3 +265,35 @@ body{
     object-fit: cover;
   }
 }
+
+/* FIX iPhone: fuerza 1 columna en pantallas angostas */
+@media (max-width: 900px){
+  .paper__content{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    padding: 16px 16px 18px !important;
+  }
+
+  .paper__text,
+  .paper__photo{
+    width: 100% !important;
+  }
+
+  .paper__photo img{
+    width: 100% !important;
+    height: auto !important;
+    max-height: 520px !important;
+    object-fit: cover !important;
+  }
+
+  .paper__headline{
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .paper__header{
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
