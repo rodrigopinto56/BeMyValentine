@@ -4,10 +4,14 @@ const openLetterBtn = document.getElementById("openLetterBtn");
 const backBtn = document.getElementById("backBtn");
 const confettiBtn = document.getElementById("confettiBtn");
 const saveBtn = document.getElementById("saveBtn");
-const finalModal = document.getElementById("finalModal");
 const closeModalBtn = document.getElementById("closeModalBtn");
 const finalMessage = document.getElementById("finalMessage");
 const todayEl = document.getElementById("today");
+
+const finalModal = document.getElementById("finalModal");
+finalModal.classList.add("hidden");
+finalModal.style.display = "none";
+
 
 todayEl.textContent = new Date().toLocaleDateString("es-MX", {
   weekday: "long", year: "numeric", month: "short", day: "numeric"
@@ -93,15 +97,20 @@ confettiBtn.addEventListener("click", () => {
   }
 
   finalMessage.textContent = `Te amo nos veremos de nuevo pronto... Aqui esta tu mundo para ti siempre.`;
+  finalModal.style.display = "grid";
   finalModal.classList.remove("hidden");
 });
 closeModalBtn.addEventListener("click", () => {
   finalModal.classList.add("hidden");
+  finalModal.style.display = "none";
 });
 
 // Cerrar si toca fuera de la caja
 finalModal.addEventListener("click", (e) => {
-  if (e.target === finalModal) finalModal.classList.add("hidden");
+  if (e.target === finalModal) {
+    finalModal.classList.add("hidden");
+  finalModal.style.display = "none";
+  }
 });
 
 saveBtn.addEventListener("click", () => {
