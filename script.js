@@ -3,8 +3,12 @@ const scene2 = document.getElementById("scene2");
 const openLetterBtn = document.getElementById("openLetterBtn");
 const backBtn = document.getElementById("backBtn");
 const confettiBtn = document.getElementById("confettiBtn");
-
+const saveBtn = document.getElementById("saveBtn");
+const finalModal = document.getElementById("finalModal");
+const closeModalBtn = document.getElementById("closeModalBtn");
+const finalMessage = document.getElementById("finalMessage");
 const todayEl = document.getElementById("today");
+
 todayEl.textContent = new Date().toLocaleDateString("es-MX", {
   weekday: "long", year: "numeric", month: "short", day: "numeric"
 });
@@ -81,4 +85,53 @@ function launchConfetti() {
   animId = requestAnimationFrame(tick);
 }
 
-confettiBtn.addEventListener("click", launchConfetti);
+confettiBtn.addEventListener("click", () => {
+  launchConfetti();
+
+  if ("vibrate" in navigator) {
+    navigator.vibrate([120, 60, 120, 60, 220]);
+  }
+
+  finalMessage.textContent = `Te amo nos veremos de nuevo pronto... Aqui esta tu mundo para ti siempre.`;
+  finalModal.classList.remove("hidden");
+});
+closeModalBtn.addEventListener("click", () => {
+  finalModal.classList.add("hidden");
+});
+
+// Cerrar si toca fuera de la caja
+finalModal.addEventListener("click", (e) => {
+  if (e.target === finalModal) finalModal.classList.add("hidden");
+});
+
+saveBtn.addEventListener("click", () => {
+  const her = document.getElementById("herName").textContent;
+  const me = document.getElementById("myName").textContent;
+
+  // Toma TODO el texto de la carta (solo el contenido de la columna de texto)
+  const letterText = document.querySelector(".paper__text").innerText.trim();
+
+  const content =
+`Carta para: ${her}
+De: ${me}
+Fecha: ${new Date().toLocaleDateString("es-MX")}
+
+${letterText}
+`;
+
+  const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `Carta_para_${her}.txt`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  URL.revokeObjectURL(url);
+
+  // mini vibración al guardar
+  if ("vibrate" in navigator) navigator.vibrate(60);
+});
+
