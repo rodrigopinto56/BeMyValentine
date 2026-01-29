@@ -25,7 +25,8 @@ body{
 
 
 .scene{width:100%; display:grid; place-items:center;}
-.hidden{display:none;}
+.hidden{display:none !important;}
+
 
 .card{
   width:min(420px, 92vw);
