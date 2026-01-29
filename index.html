@@ -65,6 +65,7 @@
 
             <div class="actions">
               <button class="btn btn-secondary" id="backBtn">Volver</button>
+              <button class="btn btn-secondary" id="saveBtn">Guardar esta carta 💾</button>
               <button class="btn" id="confettiBtn">¡Sí! 🎉</button>
             </div>
           </div>
@@ -83,6 +84,16 @@
     </section>
 
     <canvas id="confettiCanvas" class="confetti" aria-hidden="true"></canvas>
+    <div class="modal hidden" id="finalModal" role="dialog" aria-modal="true" aria-label="Mensaje final">
+  <div class="modal__box">
+    <h3>🥹💖</h3>
+    <p id="finalMessage">
+      Te amo nos veremos de nuevo pronto... Aqui esta tu mundo para ti siempre.
+    </p>
+    <button class="btn" id="closeModalBtn">Cerrar</button>
+  </div>
+</div>
+
 
   </main>
 
