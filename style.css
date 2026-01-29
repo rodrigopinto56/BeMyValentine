@@ -210,6 +210,38 @@ body{
   pointer-events: none;
 }
 
+.modal{
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(6px);
+  z-index: 50;
+}
+
+.modal__box{
+  width: min(520px, 92vw);
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 20px 70px rgba(0,0,0,.25);
+}
+
+.modal__box h3{
+  margin: 0 0 10px;
+  font-size: 2rem;
+}
+
+.modal__box p{
+  margin: 0 0 14px;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+
 @media (max-width: 480px){
   .paper{
     border-radius: 14px;
